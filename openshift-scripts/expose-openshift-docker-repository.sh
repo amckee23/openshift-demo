@@ -17,3 +17,5 @@ echo "### Exposing docker registry"
 oc expose service docker-registry
 OPENSHIFT_DOCKER_REGISTRY="$(oc get svc -n default | grep registry | awk '{print $2}')"
 echo "### Configured docker registry is now exposed at: " ${OPENSHIFT_DOCKER_REGISTRY}
+#Write ip to temp file
+echo ${OPENSHIFT_DOCKER_REGISTRY} > .openshift-docker-registry

@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-oc new-project development
+oc login -u developer
+oc new-project $1
